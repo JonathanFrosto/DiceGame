@@ -2,10 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="author" content="Jonathan Anthony">
+    <meta name="description" content="Um jogo de dado criado em Javascript">
+    <meta name="keywords" content="dice,dado,Javascript">
+
     <title>Dicee</title>
+
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
-
   </head>
   <body>
 
@@ -25,10 +29,30 @@
       <button id="btn">Roll dice!</button>
     </div>
 
+      <table class="ranking">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Pontuação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="player-winner">Player1</td>
+            <td class="score-winner">0</td>
+          </tr>
+
+          <tr>
+            <td class="player-loser">Player2</td>
+            <td class="score-loser">0</td>
+          </tr>       
+        </tbody>
+      </table>
+
+    <footer>
+      www 🎲 App Brewery 🎲 com
+    </footer>
+
     <script src="behavior.js"></script>
   </body>
-
-  <footer>
-    www 🎲 App Brewery 🎲 com
-  </footer>
 </html>
