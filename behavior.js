@@ -9,11 +9,11 @@ function roll(){
 
     document.querySelector('.img1').setAttribute('src','images/dice' + randomNumber1 + '.png');
     document.querySelector('.img2').setAttribute('src','images/dice' + randomNumber2 + '.png');
-    winner(randomNumber1,randomNumber2);
-    update(scores);
+    diceWinner(randomNumber1,randomNumber2);
+    updateRanking();
 }
 
-function winner(randomNumber1,randomNumber2){
+function diceWinner(randomNumber1,randomNumber2){
     if(randomNumber1 > randomNumber2){
         document.querySelector('h1').textContent = "Player 1 Wins!";
         scores[0] += 1;
@@ -29,22 +29,25 @@ function winner(randomNumber1,randomNumber2){
     }
 }
 
-function update(arr){
+function updateRanking(){
     if ( scores[0] > scores[1] ){
-        document.querySelector('.score-winner').textContent = scores[0];
-        document.querySelector('.score-loser').textContent = scores[1];
-        document.querySelector('.player-winner').textContent = 'Player1';
-        document.querySelector('.player-loser').textContent = 'Player2';
+        firstPlace(0,1);
     }
     else if ( scores[1] > scores[0]) {
-        document.querySelector('.score-winner').textContent = scores[1];
-        document.querySelector('.score-loser').textContent = scores[0];
-        document.querySelector('.player-winner').textContent = 'Player2';
-        document.querySelector('.player-loser').textContent = 'Player1';
+        firstPlace(1,0);
     }
     else {
         document.querySelector('.score-loser').textContent = scores[lastWinner];
     }
+}
+
+function firstPlace (winner, loser){
+    // winner
+    document.querySelector('.score-winner').textContent = scores[winner];
+    document.querySelector('.player-winner').textContent = players[winner];
+    // loser
+    document.querySelector('.score-loser').textContent = scores[loser];
+    document.querySelector('.player-loser').textContent = players[loser];
 }
 
 /* when initialize */
