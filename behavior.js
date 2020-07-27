@@ -51,7 +51,7 @@ function firstPlace (winner, loser){
 }
 
 /* when initialize */
-document.querySelector('h1').textContent = "Row dice!";
+// document.querySelector('h1').textContent = "Row dice!";
 
 /* events listeners */
 button = document.querySelector('#btn');
